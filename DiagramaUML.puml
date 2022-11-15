@@ -1,0 +1,33 @@
+@startuml
+
+Class usuario{
+nombre: str
+tiket: str
+silla: int
+}
+
+
+Class ticket{
+nombre_usuario: str
+tipo: str
+silla: int
+}
+
+Class sillas{
+numero_silla: int
+}
+
+Class theater{
+lista_usuarios: dict
+
+registrar_usuario()
+generar_ticket()
+chequear_sillas()
+}
+
+sillas --> theater : dentro >
+
+ticket -left- theater : genera <
+usuario -left--* ticket
+
+@enduml
